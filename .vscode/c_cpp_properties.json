@@ -1,0 +1,13 @@
+{
+    "configurations": [
+        {
+            "name": "all",
+            "includePath": [
+                "${workspaceFolder}/inc"
+            ],
+            "intelliSenseMode": "gcc-x64",
+            "cStandard": "c99"
+        }
+    ],
+    "version": 4
+}
