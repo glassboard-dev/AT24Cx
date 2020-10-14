@@ -36,7 +36,7 @@ The other option for integrating the source into your project, is to include eve
 ```
 
 ## Implementing the driver
-After following the integration steps above, you are ready to implement the driver and start retrieving ADC data. An example [***main.c***](./template/main.c) can be found in the templates folder that shows how to implement the settings, and data retrieval API. Note that you will need to fill out your own ***usr_*** functions for reading, writing, and a uS delay. You can build the example ***main.c*** by first compiling the static lib following the steps in the ***"Creating & Linking against a static library"*** and then executing the following commands.
+After following the integration steps above, you are ready to implement the driver and start readubg/writing data from the EEPROM. An example [***main.c***](./template/main.c) can be found in the templates folder that shows how to implement read/write API. Note that you will need to fill out your own ***usr_*** functions for reading, writing, and a uS delay. You can build the example ***main.c*** by first compiling the static lib following the steps in the ***"Creating & Linking against a static library"*** and then executing the following:
 ```bash
 $ cd template
 $ mkdir build && cd build
