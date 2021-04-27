@@ -1,4 +1,5 @@
 # AT24Cx I2C (2-Wire) Serial EEPROM
+[![codecov](https://codecov.io/gh/glassboard-dev/AT24Cx/branch/master/graph/badge.svg?token=ZLJEMSN37R)](https://codecov.io/gh/glassboard-dev/AT24Cx)
 
 C Driver for the AT24Cx series of 2-Wire Serial EEPROM ICs. This driver can be included directly into a developers source or a static library can be created and then linked against. Development is done on the **develop** branch, and official releases can be found on the **master** branch.
 
@@ -43,6 +44,21 @@ $ mkdir build && cd build
 $ cmake ..
 $ make
 ```
+
+## Testing
+To test the source this submodule uses Ceedling, Unity and Gcov to run unit tests and generate HTML reports. You will need to install the following to run Unit Tests.
+- [Ruby](https://www.ruby-lang.org/en/)
+- [Ceedling](http://www.throwtheswitch.org/ceedling)
+- [Gcovr](https://gcovr.com/en/stable/installation.html)
+
+To execute the tests:
+```bash
+$ mkdir build && cd build
+$ cmake ..
+$ make tests
+```
+
+## Example application
 Example application and main can be found below:
 ```C
 #include <stdint.h>

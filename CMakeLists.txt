@@ -12,3 +12,6 @@ set(CMAKE_ARCHIVE_OUTPUT_DIRECTORY ../lib)
 
 # Create or our static library
 ADD_LIBRARY( at24cx STATIC src/at24cx.c inc/at24cx.h )
+
+# Add a custom target for our unit tests
+add_custom_target(tests cd ../ && ceedling gcov:all utils:gcov)

@@ -28,7 +28,7 @@ at24cx_return_code_t at24cx_erase(at24cx_dev_t *dev, const uint16_t addr, const 
     uint16_t address = 0x0000;
 
     // Verify all of the parameters are OK
-    if( NULL == dev) {
+    if( (NULL == dev) || (NULL == dev->intf.write)) {
         ret = AT24Cx_RET_NULL_PTR;
     }
     else if((dev->id >= AT24Cx_DEV__MAX__) ||
@@ -60,7 +60,7 @@ at24cx_return_code_t at24cx_write(at24cx_dev_t *dev, const uint16_t addr, const 
     uint16_t address = 0x0000;
 
     // Verify all of the parameters are OK
-    if( (NULL == dev) || (NULL == data) ) {
+    if( (NULL == dev) || (NULL == data) || (NULL == dev->intf.write) ) {
         ret = AT24Cx_RET_NULL_PTR;
     }
     else if((dev->id >= AT24Cx_DEV__MAX__) ||
@@ -92,7 +92,7 @@ at24cx_return_code_t at24cx_read(at24cx_dev_t *dev, const uint16_t addr, uint8_t
     uint16_t address = 0x0000;
 
     // Verify all of the parameters are OK
-    if( (NULL == dev) || (NULL == data) ) {
+    if( (NULL == dev) || (NULL == data) || (NULL == dev->intf.write) || (NULL == dev->intf.read) ) {
         ret = AT24Cx_RET_NULL_PTR;
     }
     else if((dev->id >= AT24Cx_DEV__MAX__) ||

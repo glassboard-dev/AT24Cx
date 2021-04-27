@@ -23,3 +23,12 @@ jobs:
       run: cd template/build && cmake ..
     - name: Build Demo
       run: cd template/build && make
+    - name: Run Unit tests
+      run: cd build && make tests
+    - uses: codecov/codecov-action@v1
+      with:
+        token: ${{ secrets.CODECOV_MCP342X_TOKEN }}
+        name: CodeCov-MCP342x # optional
+        files: ./build/artifacts/gcov/GcovCoverageCobertura.xml
+        fail_ci_if_error: true # optional (default = false)
+        verbose: true # optional (default = false)
